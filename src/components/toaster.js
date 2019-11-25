@@ -39,6 +39,7 @@ const Toaster = styled.div`
     position: relative;
     .handle {
       background: ${props => props.theme.lightGrey};
+      border: 0;
       cursor: pointer;
       display: block;
       z-index: 4;
@@ -81,7 +82,7 @@ class toaster extends Component {
           <span className="bar"></span>
         </span>
         <span className="lever">
-          <span className="handle"></span>
+          <button className="handle"></button>
         </span>
       </Toaster>
     );

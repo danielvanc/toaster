@@ -26,9 +26,14 @@ const theme = {
 
 const AppContainer = styled.div`
   border:0;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
   position: relative;
+  text-align: center;
   width: 500px;
+  h1 {
+    color: white;
+  }
 `
 
 const Wheel = styled.span`
@@ -54,7 +59,7 @@ const App = () => (
       <title>Toaster!</title>
     </Helmet>
     <GlobalStyles />
-    <h1>Toaster</h1>
+    <h1>Toaster!</h1>
     {
       /* 
         Toaster.
