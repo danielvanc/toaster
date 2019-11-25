@@ -68,6 +68,9 @@ const Toaster = styled.div`
 `
 
 class toaster extends Component {
+  handleLeverClick = () => {
+    console.log('Lever pushed');
+  }
   render() {
     return (
       <Toaster theme={this.props.theme} className="Toaster">
@@ -82,7 +85,7 @@ class toaster extends Component {
           <span className="bar"></span>
         </span>
         <span className="lever">
-          <button className="handle"></button>
+          <button onClick={this.handleLeverClick} className="handle"></button>
         </span>
       </Toaster>
     );
