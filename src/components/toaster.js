@@ -14,6 +14,9 @@ class toaster extends Component {
   
   handleLeverClick = (e) => {
     console.log('Lever pushed');
+    this.setState({
+      isOn: !this.state.isOn
+    })
   }
 
   handleHeatClick = (e) => {
