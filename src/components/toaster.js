@@ -9,7 +9,8 @@ class toaster extends Component {
     this.state = {
       isOn: false,
       toastLevel: 'unToasted',
-      toastComplete: false
+      toastComplete: false,
+      toastLevelTimer: 4000
     }
   }
  
@@ -26,7 +27,7 @@ class toaster extends Component {
           })
           console.log('Finished toasting...');
           clearInterval(this.interID)
-        }, 2000);
+        }, this.state.toastLevelTimer);
         clearTimeout(this.timerID);
       }, 1000);
       console.log('Got here...');
@@ -48,8 +49,10 @@ class toaster extends Component {
   handleHeatClick = (e) => {
     if (this.state.isOn) return;
     const selectedLevel = e.currentTarget.dataset.toastLevel;
+    const selectedLevelTime = e.currentTarget.dataset.toastLevelTime;
     this.setState({
-      toastLevel: selectedLevel
+      toastLevel: selectedLevel,
+      toastLevelTimer: selectedLevelTime
     })
   }
 
