@@ -20,6 +20,7 @@ class toaster extends Component {
   }
 
   handleHeatClick = (e) => {
+    if (this.state.isOn) return;
     const selectedLevel = e.currentTarget.dataset.toastLevel;
     this.setState({
       toastLevel: selectedLevel
