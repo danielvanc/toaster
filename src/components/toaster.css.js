@@ -45,7 +45,15 @@ export const Toaster = styled.div`
       width: 45px;
       left: -15px;
       position: relative;
-      /* bottom: -105px; */
+      top: 0;
+      transition: top 0.5ms ease-in;
+    }
+    &.down {
+      .handle {
+        bottom: -105px;
+        top: auto;
+        transition: bottom 0.5ms ease-in;
+      }
     }
   }
 

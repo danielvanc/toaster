@@ -50,9 +50,10 @@ class toaster extends Component {
           heatClick={this.handleHeatClick} 
           theme={this.props.theme} 
         />
-        <span className="lever">
+        <span className={`lever ${this.state.isOn ? 'down' : ''}`}>
           <button 
-            onClick={this.handleLeverClick} className="handle"
+            onClick={this.handleLeverClick}
+            className="handle"
           >
           </button>
         </span>
