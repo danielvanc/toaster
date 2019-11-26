@@ -5,9 +5,31 @@ class HeatLevel extends Component {
   render() {
     return (
       <HeatLevelBar theme={this.props.theme}>
-        <li><button className="active"><span>Light</span></button></li>
-        <li><button><span>Medium</span></button></li>
-        <li><button><span>Well done</span></button></li>
+        <li>
+          <button 
+            className="active"
+            onClick={this.props.heatClick}
+            data-toast-level="lightlyDone"
+          >
+            <span>Light</span>
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={this.props.heatClick}
+            data-toast-level="mediumDone"
+          >
+            <span>Medium</span>
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={this.props.heatClick}
+            data-toast-level="overDone"
+          >
+            <span>Well done</span>
+          </button>
+        </li>
       </HeatLevelBar>
     );
   }

@@ -12,10 +12,10 @@ export const HeatLevelBar = styled.ul`
   list-style: none;
   position: absolute;
   span {
-      font-size: 11px;
-      position: absolute;
-      top: -19px;
-      width: 52px;
+    font-size: 11px;
+    position: absolute;
+    top: -19px;
+    width: 52px;
   }
   button {
     background: #111;

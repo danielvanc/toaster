@@ -12,8 +12,15 @@ class toaster extends Component {
     }
   }
   
-  handleLeverClick = () => {
+  handleLeverClick = (e) => {
     console.log('Lever pushed');
+  }
+
+  handleHeatClick = (e) => {
+    const selectedLevel = e.currentTarget.dataset.toastLevel;
+    this.setState({
+      toastLevel: selectedLevel
+    })
   }
 
   render() {
@@ -32,7 +39,10 @@ class toaster extends Component {
           <span className="bar"></span>
           <span className="bar"></span>
         </span>
-        <HeatLevel theme={this.props.theme} />
+        <HeatLevel 
+          heatClick={this.handleHeatClick} 
+          theme={this.props.theme} 
+        />
         <span className="lever">
           <button 
             onClick={this.handleLeverClick} className="handle"
