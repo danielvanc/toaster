@@ -7,13 +7,14 @@ class toaster extends Component {
     super(props);
     this.state = {
       isOn: false,
-      toastLevel: 'mediumDone'
+      toastLevel: 'unToasted'
     }
   }
   
   handleLeverClick = () => {
     console.log('Lever pushed');
   }
+
   render() {
     return (
       <Toaster 

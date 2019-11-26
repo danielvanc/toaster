@@ -14,7 +14,7 @@ export const theme = {
   lightBlue: "#4ECFE2",
   darkBlue: "#3E9DAB",
   lightGrey: "#333",
-  breadBody: "#FCDB78",
+  unToasted: "#FCDB78",
   breadCrust: "#C47C36",
   lightlyDone: "#888",
   mediumDone: "#444",
