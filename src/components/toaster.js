@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Toaster } from './toaster.css'
-import Toast from './toast'
+import HeatLevel from './HeatLevel'
+import { Toaster } from './toaster.css';
+import Toast from './toast';
 
 class toaster extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class toaster extends Component {
           <span className="bar"></span>
           <span className="bar"></span>
         </span>
+        <HeatLevel theme={this.props.theme} />
         <span className="lever">
           <button 
             onClick={this.handleLeverClick} className="handle"
