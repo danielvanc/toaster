@@ -12,6 +12,7 @@ export const Toast = styled.div`
   position: relative;
   &.toasted {
     background: ${props => props.theme[props.toastLevel]};
+    transition: background 5s ease-in;
   }
   &.up {
     top: -116px;
