@@ -3,6 +3,14 @@ import { Toaster } from './toaster.css'
 import Toast from './toast'
 
 class toaster extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOn: false,
+      toastLevel: 'mediumDone'
+    }
+  }
+  
   handleLeverClick = () => {
     console.log('Lever pushed');
   }
@@ -14,7 +22,7 @@ class toaster extends Component {
       >
         <div className="toaster-top">
           <span className="toaster-tray">
-            <Toast theme={this.props.theme} />
+            <Toast theme={this.props.theme} toastLevel={this.state.toastLevel} />
           </span>
         </div>
         <span className="bars">

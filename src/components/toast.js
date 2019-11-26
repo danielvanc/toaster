@@ -4,7 +4,10 @@ import { Toast } from './toast.css'
 class toast extends Component {
   render() {
     return (
-      <Toast theme={this.props.theme} className="up" />
+      <Toast 
+        theme={this.props.theme} 
+        toastLevel={this.props.toastLevel} className="up" 
+      />
     );
   }
 }

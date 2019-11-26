@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Toast = styled.div`
-  background: ${props => props.theme.breadBody};
+  background: ${props => props.theme[props.toastLevel]};
   border: 3px solid ${props => props.theme.breadCrust};
   border-bottom: 0;
   border-top-left-radius: 12px;
@@ -17,4 +17,4 @@ export const Toast = styled.div`
     height: 28px;
     top: -10px;
   }
-`
+`;
