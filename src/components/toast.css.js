@@ -10,10 +10,6 @@ export const Toast = styled.div`
   width: 160px;
   margin: 0 auto;
   position: relative;
-  &.toasted {
-    background: ${props => props.theme[props.toastLevel]};
-    transition: background 5s ease-in;
-  }
   &.up {
     top: -116px;
     transition: all 1s ease-out;
@@ -22,5 +18,9 @@ export const Toast = styled.div`
     height: 28px;
     top: -10px;
     transition: all 1s ease-out;
+  }
+  &.toasting {
+    background: ${props => props.theme[props.toastLevel]};
+    transition: background ${props => props.toastLevelTime}s ease-in;
   }
 `;

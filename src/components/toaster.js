@@ -9,40 +9,33 @@ class toaster extends Component {
     this.state = {
       isOn: false,
       toastLevel: 'unToasted',
-      toastComplete: false,
-      toastLevelTimer: 4000
+      toasting: false,
+      toastLevelTimer: 4
     }
   }
  
   componentDidUpdate() {
-    
     if (this.state.isOn) {
-  
       this.timerID = setTimeout(() => {
         console.log('Start toasting...');
+        this.setState({
+          toasting: true
+        })
         this.interID = setInterval(() => {
           this.setState({
             isOn: false,
-            toastComplete: true
           })
-          console.log('Finished toasting...');
+          console.log('Finished toasting!');
           clearInterval(this.interID)
-        }, this.state.toastLevelTimer);
+        }, Number(this.state.toastLevelTimer + '000'));
         clearTimeout(this.timerID);
       }, 1000);
-      console.log('Got here...');
-      
     }
   }
   
   handleLeverClick = (e) => {
-    if (this.state.toastComplete) {
-      this.setState({
-        toastComplete: false
-      })
-    }
     this.setState({
-      isOn: !this.state.isOn
+      isOn: !this.state.isOn,
     })
   }
 
@@ -67,8 +60,9 @@ class toaster extends Component {
             <Toast
               theme={this.props.theme}
               toastLevel={this.state.toastLevel}
+              toastLevelTime={this.state.toastLevelTimer}
               isOn={this.state.isOn}
-              complete={this.state.toastComplete}
+              toasting={this.state.toasting}
             />
           </span>
         </div>
