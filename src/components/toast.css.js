@@ -12,9 +12,11 @@ export const Toast = styled.div`
   position: relative;
   &.up {
     top: -116px;
+    transition: all 1s ease-out;
   }
   &.down {
     height: 28px;
     top: -10px;
+    transition: all 1s ease-out;
   }
 `;

@@ -6,7 +6,8 @@ class toast extends Component {
     return (
       <Toast 
         theme={this.props.theme} 
-        toastLevel={this.props.toastLevel} className="up" 
+        toastLevel={this.props.toastLevel}
+        className={this.props.isOn ? 'down' : 'up'}
       />
     );
   }

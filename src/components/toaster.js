@@ -34,7 +34,11 @@ class toaster extends Component {
       >
         <div className="toaster-top">
           <span className="toaster-tray">
-            <Toast theme={this.props.theme} toastLevel={this.state.toastLevel} />
+            <Toast
+              theme={this.props.theme}
+              toastLevel={this.state.toastLevel}
+              isOn={this.state.isOn}
+            />
           </span>
         </div>
         <span className="bars">
