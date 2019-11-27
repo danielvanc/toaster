@@ -16,6 +16,7 @@ export const Toaster = styled.div`
     border-top-right-radius: 15px;
     padding: 1em 0;
     text-align: center;
+    position: relative;
   }
 
   .toaster-tray {
@@ -25,6 +26,18 @@ export const Toaster = styled.div`
     height: 20px;
     width: 50%;
     margin: 0 auto;
+  }
+
+  .loadToast {
+    background: ${props => props.theme.lightBlue};
+    border: 0;
+    border-radius: 6px;
+    color: #444;
+    cursor: pointer;
+    position: absolute;
+    right: 37px;
+    top: 16px;
+    padding: 4px 8px;
   }
 
   .lever {
