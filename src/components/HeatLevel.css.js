@@ -25,6 +25,9 @@ export const HeatLevelBar = styled.ul`
     position: relative;
     height: 25px;
     width: 25px;
+    &:focus {
+      outline: 0;
+    }
     &.active {
       background: ${props => props.theme.darkBlue};
       border: 2px solid yellow;
