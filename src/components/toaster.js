@@ -75,6 +75,8 @@ class toaster extends Component {
           heatClick={this.handleHeatClick} 
           toastLevel={this.state.toastLevel}
           theme={this.props.theme} 
+          isOn={this.state.isOn}
+          toasting={this.state.toasting}
         />
         <span className={`lever ${this.state.isOn ? 'down' : ''}`}>
           <button 
