@@ -39,6 +39,13 @@ class toaster extends Component {
     })
   }
 
+  handleLoadToast = () => {
+    this.setState({
+      isOn: false,
+      toasting: false
+    })
+  }
+
   handleHeatClick = (e) => {
     if (this.state.isOn) return;
     const selectedLevel = e.currentTarget.dataset.toastLevel;
@@ -65,6 +72,11 @@ class toaster extends Component {
               toasting={this.state.toasting}
             />
           </span>
+          <button 
+            onClick={this.handleLoadToast} className="loadToast"
+          >
+            Load
+          </button>
         </div>
         <span className="bars">
           <span className="bar"></span>
