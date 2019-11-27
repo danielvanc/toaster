@@ -38,6 +38,9 @@ export const Toaster = styled.div`
     right: 37px;
     top: 16px;
     padding: 4px 8px;
+    &.available {
+      background: yellow;
+    }
   }
 
   .lever {

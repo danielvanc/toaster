@@ -73,7 +73,8 @@ class toaster extends Component {
             />
           </span>
           <button 
-            onClick={this.handleLoadToast} className="loadToast"
+            onClick={this.handleLoadToast} 
+            className={`loadToast ${!this.state.isOn && "available"}`}
             disabled={this.state.isOn}
           >
             Load
