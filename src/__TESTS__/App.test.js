@@ -1,6 +1,8 @@
 import React from 'react'
-import { render, cleanup} from '@testing-library/react'
+import 
+{ render, cleanup, fireEvent} from '@testing-library/react'
 import App from '../App';
+import Toast from '../components/toast'
 import Toaster from '../components/Toaster'
 
 let container = null;
@@ -10,10 +12,6 @@ beforeAll(() => {
   render(<App />, container);
 });
 
-const defaultProps = {
-  onClick: jest.fn(),
-}
-
 describe('Main app tests', () => {
   it('Page loads and doesn\'t crash', () => {
     const { queryByText } = render("<h1>");
@@ -21,20 +19,25 @@ describe('Main app tests', () => {
   })
 
   it('Displays the toaster and is able to click Load', () => {
-    const { queryByText } = render(<Toaster {...defaultProps} />);
+    const { queryByText } = render(<Toaster />);
+    const toast = container.querySelector('.toasting')
     expect(queryByText('Load')).toBeTruthy()
     
-    
+    fireEvent.click(queryByText('Load'))
+    expect(toast).toBeFalsy();
+  })
 
-    
+  it('Lever activates and disables heat controls', () => {
+    const { getByTestId } = render(<Toaster />)
+    const lever = getByTestId('lever')
+
+    expect(lever).toBeTruthy();
+
+    fireEvent.click(lever)
+    expect(lever).toHaveProperty('disabled')
   })
 })
 
 afterAll(
-  // () => {
-  // unmountComponentAtNode(container);
-  // container.remove();
-  // container = null;
-  // }
   cleanup
 )

@@ -97,6 +97,7 @@ class toaster extends Component {
             onClick={this.handleLeverClick}
             className="handle"
             disabled={this.state.isOn || this.state.toasting}
+            data-testid="lever"
           >
           </button>
         </span>
