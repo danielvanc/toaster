@@ -1,7 +1,7 @@
 import React from 'react'
-// import { render, unmountComponentAtNode } from 'react-dom'
 import { render, cleanup} from '@testing-library/react'
 import App from '../App';
+import Toaster from '../components/Toaster'
 
 let container = null;
 
@@ -10,10 +10,9 @@ beforeAll(() => {
   render(<App />, container);
 });
 
-// const defaultProps = {
-//   onClick: jest.fn(),
-
-// }
+const defaultProps = {
+  onClick: jest.fn(),
+}
 
 describe('Main app tests', () => {
   it('Page loads and doesn\'t crash', () => {
@@ -21,13 +20,10 @@ describe('Main app tests', () => {
     expect(queryByText('Toaster!')).toBeTruthy();
   })
 
-  it('Displays the toaster and is able to start', () => {
-    const {} = render(".Toaster");
+  it('Displays the toaster and is able to click Load', () => {
+    const { queryByText } = render(<Toaster {...defaultProps} />);
+    expect(queryByText('Load')).toBeTruthy()
     
-    // expect(container.querySelector(".Toaster")).toBeTruthy();
-
-    // const Lever = container.querySelector('.lever');
-    // expect(Lever).toBeTruthy();
     
 
     
