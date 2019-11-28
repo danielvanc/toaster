@@ -4,7 +4,10 @@ import { HeatLevelBar } from './HeatLevel.css'
 class HeatLevel extends Component {
   render() {
     return (
-      <HeatLevelBar theme={this.props.theme}>
+      <HeatLevelBar 
+        theme={this.props.theme}
+        data-testid="heatlevels"
+      >
         <li>
           <button 
             className={`${this.props.toastLevel === "lightlyDone" && "active"}`}

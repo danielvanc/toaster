@@ -18,6 +18,7 @@ class toast extends Component {
         toastLevel={this.props.toastLevel}
         className={this.handleToastStatus(this.props.isOn)}
         toastLevelTime={this.props.toastLevelTime}
+        data-testid="toast"
       />
     );
   }

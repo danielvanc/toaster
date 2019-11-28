@@ -61,6 +61,7 @@ class toaster extends Component {
       <Toaster 
         theme={this.props.theme} 
         className="Toaster"
+        data-testid="toaster"
       >
         <div className="toaster-top">
           <span className="toaster-tray">
@@ -70,6 +71,7 @@ class toaster extends Component {
               toastLevelTime={this.state.toastLevelTimer}
               isOn={this.state.isOn}
               toasting={this.state.toasting}
+              data-testid="toast"
             />
           </span>
           <button 
