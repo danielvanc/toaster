@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Toast } from './toast.css'
 
-class toast extends Component {
-
-  handleToastStatus = (status) => {
-    if (status && this.props.toasting) return 'down toasting';
-    if (status && !this.props.toasting) return 'down';
-    if (status === false && this.props.toasting) return 'up toasting';
-    if (!status && !this.props.toasting) return 'up'
+const toast = props => {
+  const handleToastStatus = status => {
+    if (status && props.toasting) return 'down toasting';
+    if (status && !props.toasting) return 'down';
+    if (status === false && props.toasting) return 'up toasting';
+    if (!status && !props.toasting) return 'up'
   }
-
-  render() {
-    return (
-      <Toast 
-        theme={this.props.theme} 
-        toasting={this.props.toasting}
-        toastLevel={this.props.toastLevel}
-        className={this.handleToastStatus(this.props.isOn)}
-        toastLevelTime={this.props.toastLevelTime}
-        data-testid="toast"
-      />
-    );
-  }
+  return (
+    <Toast 
+      theme={props.theme} 
+      toasting={props.toasting}
+      toastLevel={props.toastLevel}
+      className={handleToastStatus(props.isOn)}
+      toastLevelTime={props.toastLevelTime}
+      data-testid="toast"
+    />
+  );
 }
 
 export default toast;
