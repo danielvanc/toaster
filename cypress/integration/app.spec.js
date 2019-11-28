@@ -46,4 +46,10 @@ describe('Ensure page runs and tests in cypress', () => {
       .get('[data-testid="toast"')
       .should('not.have.class', 'toasting')
   })
+  it('Finish up by typing in the box, test complete', () => {
+    cy
+      .get('.CypressTestBox')
+      .wait(2000)
+      .type('Test complete... thanks :)')
+  })
 })

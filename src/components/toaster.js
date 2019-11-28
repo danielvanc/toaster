@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HeatLevel from './HeatLevel'
 import { Toaster } from './toaster.css';
 import Toast from './toast';
+import InputBox from './InputBox'
 
 class toaster extends Component {
   constructor(props) {
@@ -58,52 +59,55 @@ class toaster extends Component {
 
   render() {
     return (
-      <Toaster 
-        theme={this.props.theme} 
-        className="Toaster"
-        data-testid="toaster"
-      >
-        <div className="toaster-top">
-          <span className="toaster-tray">
-            <Toast
-              theme={this.props.theme}
-              toastLevel={this.state.toastLevel}
-              toastLevelTime={this.state.toastLevelTimer}
-              isOn={this.state.isOn}
-              toasting={this.state.toasting}
-              data-testid="toast"
-            />
-          </span>
-          <button 
-            onClick={this.handleLoadToast} 
-            className={`loadToast ${!this.state.isOn && "available"}`}
-            disabled={this.state.isOn}
-          >
-            Load
-          </button>
-        </div>
-        <span className="bars">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </span>
-        <HeatLevel 
-          heatClick={this.handleHeatClick} 
-          toastLevel={this.state.toastLevel}
+      <>
+        <Toaster 
           theme={this.props.theme} 
-          isOn={this.state.isOn}
-          toasting={this.state.toasting}
-        />
-        <span className={`lever ${this.state.isOn ? 'down' : ''}`}>
-          <button 
-            onClick={this.handleLeverClick}
-            className="handle"
-            disabled={this.state.isOn || this.state.toasting}
-            data-testid="lever"
-          >
-          </button>
-        </span>
-      </Toaster>
+          className="Toaster"
+          data-testid="toaster"
+        >
+          <div className="toaster-top">
+            <span className="toaster-tray">
+              <Toast
+                theme={this.props.theme}
+                toastLevel={this.state.toastLevel}
+                toastLevelTime={this.state.toastLevelTimer}
+                isOn={this.state.isOn}
+                toasting={this.state.toasting}
+                data-testid="toast"
+              />
+            </span>
+            <button 
+              onClick={this.handleLoadToast} 
+              className={`loadToast ${!this.state.isOn && "available"}`}
+              disabled={this.state.isOn}
+            >
+              Load
+            </button>
+          </div>
+          <span className="bars">
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </span>
+          <HeatLevel 
+            heatClick={this.handleHeatClick} 
+            toastLevel={this.state.toastLevel}
+            theme={this.props.theme} 
+            isOn={this.state.isOn}
+            toasting={this.state.toasting}
+          />
+          <span className={`lever ${this.state.isOn ? 'down' : ''}`}>
+            <button 
+              onClick={this.handleLeverClick}
+              className="handle"
+              disabled={this.state.isOn || this.state.toasting}
+              data-testid="lever"
+            >
+            </button>
+          </span>
+          </Toaster>
+          <InputBox />
+      </>
     );
   }
 }
