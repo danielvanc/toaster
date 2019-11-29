@@ -6,10 +6,9 @@ describe('Ensure page runs and tests in cypress', () => {
     cy.visit('/')
     cy
       .get('#root')
-      .find('h1')
   })
   it('Check app contains h1 and contains text', () => {
-    cy.get('#root').find('h1').contains('Toaster!')
+    cy.contains('h1','Toaster!')
   })
   it('Check the app contains the Toaster panel', () => {
     cy
